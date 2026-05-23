@@ -8,7 +8,7 @@ import node from "../assets/icons/nodejs.png";
 import express from "../assets/icons/express.png";
 import mongo from "../assets/icons/mongodb.png";
 import ts from "../assets/icons/typescript.png";
-import nextjs from "../assets/icons/nextjs.png";
+import nextjs from "../assets/icons/Nextjs.png";
 import PostgresSQL from "../assets/icons/PostgresSQL.png";
 import tailwind from "../assets/icons/tailwind.png";
 import redux from "../assets/icons/redux.png";
