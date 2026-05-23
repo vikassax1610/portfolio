@@ -6,7 +6,7 @@ import SectionLoader from "./components/SectionLoader";
 const HomePage = lazy(() => import("./pages/HomePage"));
 const Portfolio = lazy(() => import("./pages/Portfolio"));
 
-const PageLoader = () => <SectionLoader />;
+const PageLoader = () => <SectionLoader fullScreen />;
 function App() {
   const [openSideBar, setOpenSideBar] = useState(false);
 
