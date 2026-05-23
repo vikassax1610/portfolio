@@ -1,9 +1,12 @@
-import HomePage from "./pages/HomePage";
-import Portfolio from "./pages/Portfolio";
-import Navbar from "./components/Navbar";
+import { lazy, Suspense, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
+import SectionLoader from "./components/SectionLoader";
+const HomePage = lazy(() => import("./pages/HomePage"));
+const Portfolio = lazy(() => import("./pages/Portfolio"));
+
+const PageLoader = () => <SectionLoader />;
 function App() {
   const [openSideBar, setOpenSideBar] = useState(false);
 
@@ -11,10 +14,12 @@ function App() {
     <BrowserRouter>
       <Navbar setOpenSideBar={setOpenSideBar} openSideBar={openSideBar} />
       <Sidebar setOpenSideBar={setOpenSideBar} openSideBar={openSideBar} />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-      </Routes>
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }

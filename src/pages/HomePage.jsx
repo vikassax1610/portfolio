@@ -1,11 +1,13 @@
-import HeroSection from "../components/HeroSection";
-import SkillCarousel from "../components/SkillCarousel";
-import AboutMe from "../components/AboutMe";
-import Skills from "../components/Skills";
-import Experience from "../components/Experience";
-import Contact from "../components/Contact";
-import FeaturedProject from "../components/FeaturedProject";
-import FunFacts from "../components/FunFacts";
+import { lazy, Suspense } from "react";
+import HeroSection from "../components/HeroSection"; // above-the-fold — eager
+import SkillCarousel from "../components/SkillCarousel"; // above-the-fold — eager
+import SectionLoader from "../components/SectionLoader";
+const AboutMe = lazy(() => import("../components/AboutMe"));
+const FeaturedProject = lazy(() => import("../components/FeaturedProject"));
+const Skills = lazy(() => import("../components/Skills"));
+const Experience = lazy(() => import("../components/Experience"));
+const FunFacts = lazy(() => import("../components/FunFacts"));
+const Contact = lazy(() => import("../components/Contact"));
 
 export default function HomePage() {
   return (
@@ -16,20 +18,22 @@ export default function HomePage() {
         <SkillCarousel />
       </div>
 
-      <AboutMe />
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <Suspense fallback={<SectionLoader />}>
+        <AboutMe />
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-      <FeaturedProject />
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+        <FeaturedProject />
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-      <Skills />
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      <Experience />
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      <FunFacts />
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+        <Skills />
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+        <Experience />
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+        <FunFacts />
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-      <Contact />
+        <Contact />
+      </Suspense>
     </>
   );
 }

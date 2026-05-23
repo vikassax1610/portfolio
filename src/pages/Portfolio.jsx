@@ -51,6 +51,7 @@ const ProjectCard = ({ project, index }) => (
 
     <div className="relative w-full h-52 overflow-hidden border-b border-white/6">
       <img
+        loading="lazy"
         src={project.image}
         alt={project.title}
         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"

@@ -74,6 +74,7 @@ const HeroSection = () => {
               <img
                 src={myImg}
                 alt="Developer"
+                loading="eager"
                 className="lg:h-[700px] md:h-[600px] h-[400px] object-contain relative z-10"
                 style={{
                   filter:

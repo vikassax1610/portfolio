@@ -186,6 +186,7 @@ const Contact = () => {
         {/* Full cover image */}
         <img
           src={contactImg}
+          loading="lazy"
           alt="Contact Visual"
           className="absolute inset-0 w-full h-full object-cover "
         />

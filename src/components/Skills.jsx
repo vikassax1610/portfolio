@@ -74,6 +74,7 @@ const SkillBar = ({ skill, color, inView, delay }) => (
       <div className="flex items-center gap-3">
         <div className="w-7 h-7 rounded-md bg-white/5 border border-white/10 flex items-center justify-center p-1">
           <img
+            loading="lazy"
             src={skill.icon}
             alt={skill.name}
             className="w-full h-full object-contain"
