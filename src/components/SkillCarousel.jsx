@@ -1,14 +1,4 @@
 import { motion, useAnimationFrame } from "framer-motion";
-import {
-  Globe,
-  Layers,
-  Cpu,
-  Code2,
-  Server,
-  Database,
-  GitBranch,
-  Zap
-} from "lucide-react";
 import html from "../assets/icons/html.png";
 import css from "../assets/icons/css.png";
 import js from "../assets/icons/js.png";
@@ -73,11 +63,11 @@ const SkillCarousel = () => {
   });
 
   return (
-    <div className="relative py-8 overflow-hidden w-1/2">
+    <div className="relative py-8  overflow-hidden w-full lg:w-1/2">
 
       {/* Fade Edges */}
-      <div className="absolute left-0 w-24 top-0 h-full bg-gradient-to-r from-black to-transparent z-10" />
-      <div className="absolute right-0 w-24 top-0 h-full bg-gradient-to-l from-black to-transparent z-10" />
+      <div className="absolute left-0 w-24 top-0 h-full bg-transparent z-10" />
+      <div className="absolute right-0 w-24 top-0 h-full bg-transparent z-10" />
 
       {/* Carousel Track */}
       <motion.div
@@ -93,7 +83,7 @@ const SkillCarousel = () => {
             transition={{ type: "spring", stiffness: 300 }}
             className={`p-2 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 ${item.color} shadow-lg ${item.shadow} cursor-pointer`}
           >
-            <img src={item.icon} alt="" className="w-20 lg:w-10 lg:h-10 text-white " />
+            <img src={item.icon} alt="" className="w-20 lg:w-12 lg:h-12 text-white " />
           </motion.div>
         ))}
       </motion.div>
