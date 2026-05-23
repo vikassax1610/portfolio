@@ -1,4 +1,5 @@
 import { Menu } from "lucide-react";
+import { Link } from "react-router-dom";
 export default function Navbar() {
   return (
     <>
@@ -7,9 +8,12 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center gap-2">
           {/* Simple geometric logo similar to screenshot */}
-          <div className="w-10 h-10 bg-white text-black flex items-center justify-center font-black italic tracking-tighter text-xl transform -skew-x-12">
+          <Link
+            to="/"
+            className="w-10 h-10 bg-white text-black flex items-center justify-center font-black italic tracking-tighter text-xl transform -skew-x-12"
+          >
             VS
-          </div>
+          </Link>
         </div>
 
         {/* Right Nav Items */}
@@ -22,13 +26,12 @@ export default function Navbar() {
             Available to Work
           </div>
 
-          <div className="flex items-center gap-2 text-xs font-semibold tracking-wide text-white/90">
-            <span className="text-base">🇮🇳</span> INDIA
-          </div>
-
-          <button className="px-6 py-2.5 font-bold text-[10px] tracking-[0.2em] border border-white/20 rounded-full hover:bg-white hover:text-black transition-all uppercase">
+          <Link
+            to="/portfolio"
+            className="px-6 py-2.5 font-bold text-[10px] tracking-[0.2em] border border-white/20 rounded-full hover:bg-white hover:text-black transition-all uppercase"
+          >
             Projects
-          </button>
+          </Link>
 
           <button className="p-2 -mr-2 rounded-full border border-white/20 hover:bg-white/10 transition-colors">
             <Menu className="w-6 h-6" />

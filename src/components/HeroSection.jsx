@@ -7,9 +7,9 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen bg-[#050505] text-white overflow-hidden font-sans selection:bg-amber-500/30">
       <div className="relative z-10 flex items-center justify-center min-h-screen max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 pt-20 lg:pt-0 py-8 lg:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 w-full items-center gap-y-10 lg:mt-2">
+        <div className="grid grid-cols-1 lg:grid-cols-12 w-full items-center gap-y-10 lg:mt-28">
           {/* LEFT CONTENT */}
-          <div className="lg:col-span-5 mt-4 order-1 lg:order-1 relative z-20 select-none">
+          <div className="lg:col-span-5 mt-4 order-1 mx-0 md:mx-16 lg:mx-0 lg:order-1 relative z-20 select-none">
             <div className="relative lg:-rotate-3 scale-100 lg:scale-110 origin-left">
               <motion.div
                 initial={{ opacity: 0, x: -120 }}
@@ -17,19 +17,19 @@ const HeroSection = () => {
                 transition={{ duration: 0.8 }}
                 className="hero-title font-bold leading-[0.75] tracking-tight"
               >
-                <span className="block text-[var(--accent)] text-[8rem] sm:text-[5rem] md:text-[6rem] lg:text-[8rem] xl:text-[10rem]">
+                <span className="block text-[var(--accent)] text-[8rem] sm:text-[8rem] md:text-[8rem] lg:text-[8rem] xl:text-[10rem]">
                   BEYOND
                 </span>
 
-                <span className="block text-white pl-[0.3em] sm:pl-[0.5em] text-[8rem] sm:text-[5rem] md:text-[6rem] lg:text-[8rem] xl:text-[10rem]">
+                <span className="block text-white pl-[0.3em] sm:pl-[0.5em] md:pl-[2rem] text-[8rem] sm:text-[8rem] md:text-[8rem] lg:text-[8rem] xl:text-[10rem]">
                   VISUALS
                 </span>
 
-                <span className="block text-[var(--accent)] text-[6rem] sm:text-[5rem] md:text-[6rem] lg:text-[8rem] xl:text-[10rem]">
+                <span className="block text-[var(--accent)] text-[6rem] sm:text-[6rem] md:text-[8rem] lg:text-[8rem] xl:text-[10rem]">
                   BUILT WITH
                 </span>
 
-                <span className="block text-white opacity-90 pl-[0.6em] sm:pl-[1em] text-[8rem] sm:text-[5rem] md:text-[6rem] lg:text-[8rem] xl:text-[10rem]">
+                <span className="block text-white opacity-90 pl-[0.6em] sm:pl-[1em] md:pl-[2em] text-[8rem] sm:text-[8rem] md:text-[8rem] lg:text-[8rem] xl:text-[10rem]">
                   VISION
                 </span>
               </motion.div>
@@ -74,7 +74,7 @@ const HeroSection = () => {
               <img
                 src={myImg}
                 alt="Developer"
-                className="lg:h-[700px] h-[400px] object-contain relative z-10"
+                className="lg:h-[700px] md:h-[600px] h-[400px] object-contain relative z-10"
                 style={{
                   filter:
                     "drop-shadow(0 20px 50px rgba(0,0,0,.8)) grayscale(100%)",
@@ -94,19 +94,19 @@ const HeroSection = () => {
                 delay: 0.5,
               }}
             >
-              <div className="mb-6 lg:mb-10 max-w-sm space-y-5">
+              <div className="mb-6 py-2 lg:mb-10 w-full lg:max-w-sm space-y-5">
                 <div>
-                  <h3 className="text-2xl lg:text-3xl font-bold leading-tight text-white">
+                  <h3 className="text-2xl md:text-5xl lg:text-3xl font-bold leading-tight text-white">
                     I build brands, websites & digital experiences
                   </h3>
 
-                  <p className="text-white/40 text-base lg:text-lg mt-3 leading-relaxed">
+                  <p className="text-white/40 text-base md:text-xl lg:text-lg mt-3 leading-relaxed">
                     with intention, clarity and care.
                   </p>
                 </div>
 
                 <div className="space-y-3 text-center lg:text-right">
-                  <p className="text-white/70 text-sm leading-relaxed">
+                  <p className="text-white/70 text-sm md:text-base lg:text-sm leading-relaxed">
                     transforming ideas into engaging digital experiences through
                     modern design, AI integration and scalable web solutions.
                   </p>
@@ -142,41 +142,46 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              <button
+              <a
+                href="#contact"
                 className="
-                group
-                relative
-                z-50
-                px-8
-                py-4
-                border
-                border-[#b8860b]/40
-                rounded-full
-                overflow-hidden
-                transition-all
-                duration-300
-                hover:bg-[var(--accent)]
-                "
+  inline-flex
+  items-center
+  justify-center
+  group
+  relative
+  z-50
+  px-8
+  py-4
+  border
+  border-[#b8860b]/40
+  rounded-full
+  overflow-hidden
+  transition-all
+  duration-300
+  hover:bg-[var(--accent)]
+  no-underline
+  "
               >
                 <span
                   className="
-                  flex
-                  items-center
-                  gap-3
-                  text-xs
-                  font-bold
-                  uppercase
-                  tracking-[0.15em]
-                  text-[var(--accent)]
-                  transition-colors
-                  duration-300
-                  group-hover:text-black
-                  "
+    flex
+    items-center
+    gap-3
+    text-xs
+    font-bold
+    uppercase
+    tracking-[0.15em]
+    text-[var(--accent)]
+    transition-colors
+    duration-300
+    group-hover:text-black
+    "
                 >
                   Start a Project
                   <ArrowRight className="w-4 h-4" />
                 </span>
-              </button>
+              </a>
             </motion.div>
           </div>
         </div>

@@ -41,7 +41,7 @@ const Contact = () => {
   ];
 
   return (
-    <section className="relative bg-[#0a0a0a] text-white overflow-hidden selection:bg-orange-500/30 min-h-screen flex">
+    <section  id="contact" className="relative bg-[#0a0a0a] text-white overflow-hidden selection:bg-orange-500/30 min-h-screen flex">
       {/* ───── LEFT PANEL: Form (always visible) ───── */}
       <div className="relative flex flex-col justify-center w-full lg:w-[45%] px-6 sm:px-10 md:px-14 py-16 bg-[#0a0a0a] z-10 shrink-0">
         {/* Top orange border */}
