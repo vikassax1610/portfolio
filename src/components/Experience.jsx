@@ -67,7 +67,7 @@ const Experience = () => {
   };
 
   return (
-    <section className="relative min-h-screen bg-[#050505] text-white py-24 md:py-32 overflow-hidden selection:bg-amber-500/30">
+    <section id="experience" className="relative min-h-screen bg-[#050505] text-white py-24 md:py-32 overflow-hidden selection:bg-amber-500/30">
       
       {/* Background Ambience */}
       <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-[var(--accent)]/5 rounded-full blur-[120px] pointer-events-none -translate-x-1/2" />

@@ -72,7 +72,7 @@ export default function FeaturedProject() {
     },
   };
   return (
-    <section className="relative min-h-screen bg-[#050505] text-white overflow-hidden selection:bg-amber-500/30">
+    <section id="projects" className="relative min-h-screen bg-[#050505] text-white overflow-hidden selection:bg-amber-500/30">
       {/* Background Gradients */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[var(--accent)]/5 rounded-full blur-[120px] pointer-events-none translate-x-1/3 -translate-y-1/3" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-white/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/3 translate-y-1/3" />

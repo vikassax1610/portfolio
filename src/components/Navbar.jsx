@@ -1,6 +1,6 @@
 import { Menu } from "lucide-react";
 import { Link } from "react-router-dom";
-export default function Navbar() {
+export default function Navbar({ setOpenSideBar, openSideBar }) {
   return (
     <>
       <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-stone-900/40 to-transparent pointer-events-none" />
@@ -33,17 +33,26 @@ export default function Navbar() {
             Projects
           </Link>
 
-          <button className="p-2 -mr-2 rounded-full border border-white/20 hover:bg-white/10 transition-colors">
+          <button
+            onClick={() => setOpenSideBar(true)}
+            className="p-2 -mr-2 rounded-full border border-white/20 hover:bg-white/10 transition-colors"
+          >
             <Menu className="w-6 h-6" />
           </button>
         </div>
 
         {/* Mobile Menu Toggle */}
         <div className="md:hidden flex items-center gap-4">
-          <button className="px-4 py-2 font-bold text-[10px] tracking-wider border border-white/20 rounded-full uppercase">
+          <Link
+            to="/portfolio"
+            className="px-4 py-2 font-bold text-[10px] tracking-wider border border-white/20 rounded-full uppercase"
+          >
             Projects
-          </button>
-          <button className="p-2 rounded-full border border-white/20 hover:bg-white/10 transition-colors">
+          </Link>
+          <button
+            onClick={() => setOpenSideBar(true)}
+            className="p-2 rounded-full border border-white/20 hover:bg-white/10 transition-colors"
+          >
             <Menu className="w-6 h-6" />
           </button>
         </div>

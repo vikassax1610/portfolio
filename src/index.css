@@ -4,7 +4,10 @@
    Change --accent here to retheme the whole app instantly.
    Use var(--accent) in any CSS. In Tailwind use text-[var(--accent)] etc.
    ─────────────────────────────────────────────────────────────────────── */
-:root {
+html{
+   scroll-behavior:smooth;
+}
+   :root {
   --accent:     #f97316;   /* orange-500  ← ONE place to change the brand color */
   --accent-rgb: 249, 115, 22;
 }

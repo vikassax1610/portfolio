@@ -23,7 +23,7 @@ const AboutMe = () => {
   };
 
   return (
-    <section className="relative bg-[#050505] text-white  overflow-hidden selection:bg-amber-500/30">
+    <section id="about" className="relative bg-[#050505] text-white  overflow-hidden selection:bg-amber-500/30">
       {/* Background Gradients */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[var(--accent)]/5 rounded-full blur-[120px] pointer-events-none translate-x-1/3 -translate-y-1/3" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-white/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/3 translate-y-1/3" />
@@ -59,18 +59,31 @@ const AboutMe = () => {
               </h2>
 
               <p className="text-sm md:text-lg text-white/60 font-light max-w-2xl leading-relaxed">
-                Passionate Full Stack Developer creating modern web applications
-                with React and MERN technologies. Along with building responsive
-                digital experiences, I’m exploring AI integration and
-                intelligent agents to develop smarter applications with
-                automation, AI workflows, and user-focused solutions.
+                I’m a passionate Full Stack Developer focused on creating
+                modern, scalable, and high-performance web applications that
+                combine clean design with real functionality. My experience
+                spans frontend and backend technologies including React.js,
+                Next.js, Node.js, Express, MongoDB, and modern UI frameworks. I
+                enjoy transforming ideas into meaningful digital experiences
+                that are responsive, intuitive, and built with user experience
+                in mind.
+                <br />
+                <br />
+                Beyond traditional web development, I’m actively exploring AI
+                integration, intelligent agents, automation workflows, and
+                emerging technologies to build smarter applications. I believe
+                technology should not only solve problems but also create
+                experiences that feel seamless, engaging, and impactful.
               </p>
 
               <div className="flex flex-wrap gap-4 mt-4">
                 {[
                   "Full Stack Developer",
+                  "AI Enthusiast",
                   "UI/UX Designer",
                   "Problem Solver",
+                  "MERN Stack",
+                  "Creative Thinker",
                 ].map((badge, index) => (
                   <div
                     key={index}
@@ -98,24 +111,19 @@ const AboutMe = () => {
                 <ul className="space-y-6">
                   {[
                     {
-                      icon: <GraduationCap className="w-5 h-5" />,
-                      title: "Computer Science Student",
-                      desc: "Building Tomorrow's Tech Today",
+                      icon: <Target className="w-5 h-5" />,
+                      title: "Goal",
+                      desc: "Building Scalable AI-Powered Digital Experiences",
                     },
                     {
                       icon: <Laptop className="w-5 h-5" />,
-                      title: "Full-Stack Developer",
-                      desc: "Passionate About Clean Code",
+                      title: "Specialization",
+                      desc: "MERN Stack, APIs & Modern UI Development",
                     },
                     {
-                      icon: <MapPin className="w-5 h-5" />,
-                      title: "Location",
-                      desc: "Noida, India",
-                    },
-                    {
-                      icon: <Target className="w-5 h-5" />,
-                      title: "Mission",
-                      desc: "Creating Digital Solutions That Matter",
+                      icon: <Code2 className="w-5 h-5" />,
+                      title: "Interests",
+                      desc: "AI Agents, Automation & Emerging Technologies",
                     },
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-4 group">

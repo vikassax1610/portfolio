@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import { motion } from "framer-motion";
 import {
   User,
@@ -6,42 +6,28 @@ import {
   Phone,
   PenLine,
   Send,
-  Facebook,
   Instagram,
   Linkedin,
+  Twitter,
+  Github,
 } from "lucide-react";
 import contactImg from "../assets/contactus.webp";
 
 const Contact = () => {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-  const [status, setStatus] = useState("idle"); // idle | sending | sent
-
-  const handleChange = (e) =>
-    setForm({ ...form, [e.target.name]: e.target.value });
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("sending");
-    await new Promise((r) => setTimeout(r, 1800));
-    setStatus("sent");
-    setForm({ name: "", email: "", phone: "", message: "" });
-    setTimeout(() => setStatus("idle"), 4000);
-  };
-
+  const [state, handleSubmit] = useForm("xrbkyzer");
   const socials = [
-    { icon: Facebook, href: "#" },
-    { icon: Instagram, href: "#" },
-    { icon: Linkedin, href: "https://linkedin.com/in/vikassaxena" },
+    { icon: Instagram, href: "https://www.instagram.com/vikas.dev_" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/vikassaxena816" },
     { icon: Mail, href: "mailto:vikassaxena816@gmail.com" },
+    { icon: Twitter, href: "https://x.com/vikas_only_" },
+    { icon: Github, href: "https://github.com/vikassax1610" },
   ];
 
   return (
-    <section  id="contact" className="relative bg-[#0a0a0a] text-white overflow-hidden selection:bg-orange-500/30 min-h-screen flex">
+    <section
+      id="contact"
+      className="relative bg-[#0a0a0a] text-white overflow-hidden selection:bg-orange-500/30 min-h-screen flex"
+    >
       {/* ───── LEFT PANEL: Form (always visible) ───── */}
       <div className="relative flex flex-col justify-center w-full lg:w-[45%] px-6 sm:px-10 md:px-14 py-16 bg-[#0a0a0a] z-10 shrink-0">
         {/* Top orange border */}
@@ -96,8 +82,6 @@ const Contact = () => {
             <input
               type="text"
               name="name"
-              value={form.name}
-              onChange={handleChange}
               placeholder="Your Name"
               required
               className="flex-1 bg-transparent text-sm text-white placeholder-white/30 outline-none min-w-0"
@@ -110,8 +94,6 @@ const Contact = () => {
             <input
               type="email"
               name="email"
-              value={form.email}
-              onChange={handleChange}
               placeholder="Your Email"
               required
               className="flex-1 bg-transparent text-sm text-white placeholder-white/30 outline-none min-w-0"
@@ -124,8 +106,6 @@ const Contact = () => {
             <input
               type="tel"
               name="phone"
-              value={form.phone}
-              onChange={handleChange}
               placeholder="Your Phone"
               className="flex-1 bg-transparent text-sm text-white placeholder-white/30 outline-none min-w-0"
             />
@@ -136,8 +116,6 @@ const Contact = () => {
             <PenLine className="w-4 h-4 text-orange-500 shrink-0 mt-0.5" />
             <textarea
               name="message"
-              value={form.message}
-              onChange={handleChange}
               rows={5}
               placeholder="Your Message"
               required
@@ -148,17 +126,19 @@ const Contact = () => {
           {/* Submit */}
           <button
             type="submit"
-            disabled={status === "sending" || status === "sent"}
+            disabled={state.submitting}
             className="flex items-center justify-center gap-3 mt-1 px-8 py-4 border-2 border-orange-500 rounded text-orange-500 font-black text-xs tracking-[0.2em] uppercase hover:bg-orange-500 hover:text-black transition-all duration-300 disabled:opacity-60 active:scale-[0.98]"
           >
-            {status === "idle" && (
+            {state.submitting ? (
+              <span>SENDING...</span>
+            ) : state.succeeded ? (
+              <span>✓ MESSAGE SENT!</span>
+            ) : (
               <>
                 <span>SEND MESSAGE</span>
                 <Send className="w-4 h-4" />
               </>
             )}
-            {status === "sending" && <span>SENDING...</span>}
-            {status === "sent" && <span>✓ MESSAGE SENT!</span>}
           </button>
         </motion.form>
 

@@ -113,6 +113,7 @@ const Skills = () => {
   return (
     <section
       ref={ref}
+      id="skills"
       className="relative min-h-screen bg-[#050505] text-white py-24 md:py-32 overflow-hidden selection:bg-amber-500/30"
     >
       {/* Ambient glows */}

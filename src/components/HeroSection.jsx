@@ -96,11 +96,11 @@ const HeroSection = () => {
             >
               <div className="mb-6 py-2 lg:mb-10 w-full lg:max-w-sm space-y-5">
                 <div>
-                  <h3 className="text-2xl md:text-5xl lg:text-3xl font-bold leading-tight text-white">
+                  <h3 className="text-2xl hero-title md:text-5xl lg:text-3xl font-bold leading-relaxed tracking-tight text-white">
                     I build brands, websites & digital experiences
                   </h3>
 
-                  <p className="text-white/40 text-base md:text-xl lg:text-lg mt-3 leading-relaxed">
+                  <p className="text-white/40 text-sans text-base md:text-xl lg:text-lg mt-3 leading-relaxed">
                     with intention, clarity and care.
                   </p>
                 </div>
@@ -175,7 +175,7 @@ const HeroSection = () => {
     text-[var(--accent)]
     transition-colors
     duration-300
-    group-hover:text-black
+    group-hover:text-white
     "
                 >
                   Start a Project
