@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/* ─── GLOBAL THEME ─────────────────────────────────────────────────────────
+   Change --accent here to retheme the whole app instantly.
+   Use var(--accent) in any CSS. In Tailwind use text-[var(--accent)] etc.
+   ─────────────────────────────────────────────────────────────────────── */
+:root {
+  --accent:     #f97316;   /* orange-500  ← ONE place to change the brand color */
+  --accent-rgb: 249, 115, 22;
+}
+
+body {
+  background-color: #050505;
+  color: white;
+}
+
+.mask-image-linear-gradient {
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
