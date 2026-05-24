@@ -27,7 +27,7 @@ export default function Navbar({ setOpenSideBar, openSideBar }) {
           </div>
 
           <Link
-            to="https://drive.google.com/file/d/1URffUU9i8N5k7bbqZDbVTk4sJtSGxajE/view?usp=drivesdk"
+            to="https://drive.google.com/file/d/1MnZcuGGV67uEHGlxrjS85ZxaspCFNp9h/view?usp=drivesdk"
             className="px-6 py-2.5 font-bold text-[10px] tracking-[0.2em] border border-white/20 rounded-full hover:bg-white hover:text-black transition-all uppercase"
           >
             Resume
