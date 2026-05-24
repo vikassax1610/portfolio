@@ -11,9 +11,9 @@ import ts from "../assets/icons/typescript.png";
 import nextjs from "../assets/icons/next.png";
 import PostgresSQL from "../assets/icons/PostgresSQL.png";
 import tailwind from "../assets/icons/TailwindCSS.png";
-import redux from "../assets/icons/redux.png";
-import socket from "../assets/icons/socket.png";
-import firebase from "../assets/icons/firebase.png";
+import redux from "../assets/icons/Redux.png";
+import socket from "../assets/icons/Socket.png";
+import firebase from "../assets/icons/Firebase.png";
 
 const skillCategories = [
   {
