@@ -142,7 +142,7 @@ const SkillCarousel = () => {
               loading="lazy"
               src={item.icon}
               alt=""
-              className="w-20 lg:w-12 lg:h-12 text-white "
+              className="w-20 lg:w-10 lg:h-10 text-white "
             />
           </motion.div>
         ))}

@@ -58,7 +58,7 @@ const AboutMe = () => {
                 </span>
               </h2>
 
-              <p className="text-sm md:text-lg text-white/60 font-light max-w-2xl leading-relaxed">
+              <p className="text-sm md:text-sm text-white/60 font-light max-w-2xl leading-relaxed">
                 I’m a passionate Full Stack Developer focused on creating
                 modern, scalable, and high-performance web applications that
                 combine clean design with real functionality. My experience

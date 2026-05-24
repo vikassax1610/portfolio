@@ -152,7 +152,7 @@ const Skills = () => {
                 <div className="absolute bottom-2 left-0 w-full h-3 bg-[var(--accent)]/15 -z-10 skew-x-12" />
               </span>
             </h2>
-            <p className="text-white/40 text-lg  leading-relaxed">
+            <p className="text-white/40 text-sm  leading-relaxed">
               My technology stack is continuously evolving through hands-on
               experience, real-world projects, and problem-solving challenges.
               From building modern responsive interfaces with React and Tailwind

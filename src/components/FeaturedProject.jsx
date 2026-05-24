@@ -98,7 +98,7 @@ export default function FeaturedProject() {
                   Featured{" "}
                   <span className="text-[var(--accent)]">Projects</span>
                 </h3>
-                <p className="text-white/50 text-lg leading-relaxed max-w-3xl">
+                <p className="text-white/50 text-sm leading-relaxed max-w-3xl">
                   Explore a curated collection of my recent projects showcasing
                   modern web development, creative UI/UX design, full-stack
                   applications, AI-powered solutions, and scalable digital

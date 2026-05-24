@@ -6,8 +6,8 @@ import SkillCarousel from "./SkillCarousel";
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen bg-[#050505] text-white overflow-hidden font-sans selection:bg-amber-500/30">
-      <div className="relative z-10 flex items-center justify-center min-h-screen max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 pt-20 lg:pt-0 py-8 lg:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 w-full items-center gap-y-10 lg:mt-28">
+      <div className="relative z-10 flex items-center justify-center min-h-screen max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 pt-20 lg:pt-0 py-8 lg:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 w-full items-center gap-y-10 lg:mt-12">
           {/* LEFT CONTENT */}
           <div className="lg:col-span-5 mt-4 order-1 mx-0 md:mx-16 lg:mx-0 lg:order-1 relative z-20 select-none">
             <div className="relative lg:-rotate-3 scale-100 lg:scale-110 origin-left">
@@ -17,19 +17,19 @@ const HeroSection = () => {
                 transition={{ duration: 0.8 }}
                 className="hero-title font-bold leading-[0.75] tracking-tight"
               >
-                <span className="block text-[var(--accent)] text-[8rem] sm:text-[8rem] md:text-[8rem] lg:text-[8rem] xl:text-[10rem]">
+                <span className="block text-[var(--accent)] text-[8rem] sm:text-[8rem] md:text-[8rem] lg:text-[8rem] xl:text-[8rem]">
                   BEYOND
                 </span>
 
-                <span className="block text-white pl-[0.3em] sm:pl-[0.5em] md:pl-[2rem] text-[8rem] sm:text-[8rem] md:text-[8rem] lg:text-[8rem] xl:text-[10rem]">
+                <span className="block text-white pl-[0.3em] sm:pl-[0.5em] md:pl-[2rem] text-[8rem] sm:text-[8rem] md:text-[8rem] lg:text-[8rem] xl:text-[8rem]">
                   VISUALS
                 </span>
 
-                <span className="block text-[var(--accent)] text-[6rem] sm:text-[6rem] md:text-[8rem] lg:text-[8rem] xl:text-[10rem]">
+                <span className="block text-[var(--accent)] text-[6rem] sm:text-[6rem] md:text-[8rem] lg:text-[8rem] xl:text-[8rem]">
                   BUILT WITH
                 </span>
 
-                <span className="block text-white opacity-90 pl-[0.6em] sm:pl-[1em] md:pl-[2em] text-[8rem] sm:text-[8rem] md:text-[8rem] lg:text-[8rem] xl:text-[10rem]">
+                <span className="block text-white opacity-90 pl-[0.6em] sm:pl-[1em] md:pl-[4rem] text-[8rem] sm:text-[8rem] md:text-[8rem] lg:text-[8rem] xl:text-[8rem]">
                   VISION
                 </span>
               </motion.div>
@@ -40,7 +40,7 @@ const HeroSection = () => {
           <div className="lg:col-span-4 order-1 lg:order-2 relative flex justify-center items-end h-[400px] md:h-[550px] lg:h-[80vh]">
             {/* Background card */}
             <div
-              className="absolute w-[150%] h-[90%] bg-[#1a1a1a] -rotate-3 border border-white/5 shadow-2xl overflow-hidden pointer-events-none"
+              className="absolute w-[150%] h-[80%] bg-[#1a1a1a] -rotate-3 border border-white/5 shadow-2xl overflow-hidden pointer-events-none"
               style={{
                 background: "linear-gradient(45deg,#111 0%,#222 100%)",
               }}
@@ -75,7 +75,7 @@ const HeroSection = () => {
                 src={myImg}
                 alt="Developer"
                 loading="eager"
-                className="lg:h-[700px] md:h-[600px] h-[400px] object-contain relative z-10"
+                className="lg:h-[550px] md:h-[600px] h-[400px] object-contain relative z-10"
                 style={{
                   filter:
                     "drop-shadow(0 20px 50px rgba(0,0,0,.8)) grayscale(100%)",
@@ -86,7 +86,7 @@ const HeroSection = () => {
           </div>
 
           {/* RIGHT CONTENT */}
-          <div className="lg:col-span-3 order-3 relative lg:mt-[18rem] z-30 flex flex-col items-center lg:items-end text-center lg:text-right">
+          <div className="lg:col-span-3 order-3 relative lg:mt-[12rem] z-30 flex flex-col items-center lg:items-end text-center lg:text-right">
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
@@ -95,7 +95,7 @@ const HeroSection = () => {
                 delay: 0.5,
               }}
             >
-              <div className="mb-6 py-2 lg:mb-10 w-full lg:max-w-sm space-y-5">
+              <div className="mb-6 py-2 lg:mb-5 w-full lg:max-w-sm space-y-2">
                 <div>
                   <h3 className="text-2xl hero-title md:text-5xl lg:text-3xl font-bold leading-relaxed tracking-tight text-white">
                     I build brands, websites & digital experiences
@@ -106,7 +106,7 @@ const HeroSection = () => {
                   </p>
                 </div>
 
-                <div className="space-y-3 text-center lg:text-right">
+                <div className="space-y-2 text-center lg:text-right">
                   <p className="text-white/70 text-sm md:text-base lg:text-sm leading-relaxed">
                     transforming ideas into engaging digital experiences through
                     modern design, AI integration and scalable web solutions.
@@ -202,7 +202,7 @@ const HeroSection = () => {
                   flex-col
                   lg:flex-row
                   items-center
-                  gap-4
+                  gap-2
                   z-20
                   w-full
                   justify-center
@@ -210,10 +210,6 @@ const HeroSection = () => {
                   hidden lg:block
                   "
         >
-          <span className="text-[12px] font-bold text-white/30 uppercase tracking-[0.2em]">
-            We Build By:
-          </span>
-
           <div className="w-[250px] sm:w-[320px] lg:w-[650px]">
             <SkillCarousel />
           </div>
