@@ -33,7 +33,7 @@ export default function FunFacts() {
     },
   };
   return (
-    <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-24 md:py-32">
+    <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-24 md:py-20">
       <motion.div variants={itemVariants} className="flex flex-col gap-12">
         <h3 className="text-3xl md:text-5xl font-bold tracking-tighter text-center">
           Fun <span className="text-[var(--accent)]">Facts</span>
