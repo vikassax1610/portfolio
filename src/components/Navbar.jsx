@@ -44,10 +44,10 @@ export default function Navbar({ setOpenSideBar, openSideBar }) {
         {/* Mobile Menu Toggle */}
         <div className="md:hidden flex items-center gap-4">
           <Link
-            to="/portfolio"
+            to="https://drive.google.com/file/d/1MnZcuGGV67uEHGlxrjS85ZxaspCFNp9h/view?usp=drivesdk"
             className="px-4 py-2 font-bold text-[10px] tracking-wider border border-white/20 rounded-full uppercase"
           >
-            Projects
+            Resume
           </Link>
           <button
             onClick={() => setOpenSideBar(true)}
