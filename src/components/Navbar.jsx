@@ -27,7 +27,7 @@ export default function Navbar({ setOpenSideBar, openSideBar }) {
           </div>
 
           <Link
-            to="https://drive.google.com/file/d/1MnZcuGGV67uEHGlxrjS85ZxaspCFNp9h/view?usp=drivesdk"
+            to="https://drive.google.com/file/d/1MDj24uZxApRR3WulioKXRsXXYvhvuKIK/view?usp=drivesdk"
             className="px-6 py-2.5 font-bold text-[10px] tracking-[0.2em] border border-white/20 rounded-full hover:bg-white hover:text-black transition-all uppercase"
           >
             Resume
@@ -44,7 +44,7 @@ export default function Navbar({ setOpenSideBar, openSideBar }) {
         {/* Mobile Menu Toggle */}
         <div className="md:hidden flex items-center gap-4">
           <Link
-            to="https://drive.google.com/file/d/1MnZcuGGV67uEHGlxrjS85ZxaspCFNp9h/view?usp=drivesdk"
+            to="https://drive.google.com/file/d/1MDj24uZxApRR3WulioKXRsXXYvhvuKIK/view?usp=drivesdk"
             className="px-4 py-2 font-bold text-[10px] tracking-wider border border-white/20 rounded-full uppercase"
           >
             Resume
