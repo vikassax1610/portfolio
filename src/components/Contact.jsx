@@ -188,7 +188,7 @@ const Contact = () => {
           src={contactImg}
           loading="lazy"
           alt="Contact Visual"
-          className="absolute inset-0 w-full h-full object-cover "
+          className="absolute inset-0 w-full h-full object-contain "
         />
 
         {/* Dark overlay */}
