@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import gamix from "../assets/project/gamix.webp";
 import fusionSpin from "../assets/project/fusionSpin.webp";
-import nmCrm from "../assets/project/nmCrm.webp";
+import threadStore from "../assets/project/threadStore.webp";
 import leadgen from "../assets/project/leadgen.webp";
 import { Link } from "react-router-dom";
 export default function FeaturedProject() {
@@ -15,11 +15,11 @@ export default function FeaturedProject() {
       image: gamix,
     },
     {
-      title: "Nidhimani Dashboard",
-      desc: "An interactive dashboard for monitoring key metrics, visualizing data, and managing tasks in real time.",
-      tech: ["React.js", "TailwindCSS", "Framer Motion", "TipTap Editor"],
-      link: "https://tourmaline-meerkat-094164.netlify.app/",
-      image: nmCrm,
+      title: "Shoply AI Shopping Assistant",
+      desc: "An AI-powered eCommerce shopping assistant that understands natural-language product requests, searches the real product catalog, and delivers personalized recommendations through an interactive chat experience.",
+      tech: ["React", "Node.js", "Express", "Gemini AI"],
+      link: "https://ai-shopping-agent-one.vercel.app/",
+      image: threadStore,
     },
     {
       title: "Fusion Spin",

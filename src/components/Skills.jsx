@@ -257,7 +257,7 @@ const Skills = () => {
           {[
             { num: "8+", label: "Core Technologies" },
             { num: "12+", label: "Tools & Libraries" },
-            { num: "1yr+", label: "Industry Experience" },
+            { num: "2yr+", label: "Industry Experience" },
             { num: "∞", label: "Learning Mindset" },
           ].map((s, i) => (
             <div

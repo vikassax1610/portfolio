@@ -1,6 +1,6 @@
 import { Menu } from "lucide-react";
 import { Link } from "react-router-dom";
-export default function Navbar({ setOpenSideBar, openSideBar }) {
+export default function Navbar({ setOpenSideBar }) {
   return (
     <>
       <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-stone-900/40 to-transparent pointer-events-none" />

@@ -2,8 +2,10 @@ import gamix from "../assets/project/gamix.webp";
 import fusionSpin from "../assets/project/fusionSpin.webp";
 import nmCrm from "../assets/project/nmCrm.webp";
 import leadgen from "../assets/project/leadgen.webp";
-import cfi from "../assets/project/cfi.webp";
+import cfi from "../assets/project/nyxstack.webp";
+import threadStore from "../assets/project/threadStore.webp";
 const projects = [
+
   {
     id: 1,
     title: "Gamix Labs",
@@ -17,6 +19,17 @@ const projects = [
   },
   {
     id: 2,
+    title: "Shoply AI Shopping Assistant",
+    desc: "An AI-powered eCommerce shopping assistant that understands natural-language product requests, searches the real product catalog, and delivers personalized recommendations through an interactive chat experience.",
+    tech: ["React", "Node.js", "Express", "Gemini AI"],
+    link: "https://ai-shopping-agent-one.vercel.app/",
+    image: threadStore,
+    category: "AI",
+    featured: true,
+    year: "2026",
+  },
+  {
+    id: 3,
     title: "NidhiMani Dashboard",
     desc: "A comprehensive CRM & content dashboard with rich-text editing, analytics, and real-time data for a premium jewellery brand.",
     tech: ["React.js", "TailwindCSS", "TipTap Editor"],
@@ -27,7 +40,7 @@ const projects = [
     year: "2025",
   },
   {
-    id: 3,
+    id: 4,
     title: "Fusion Spin",
     desc: "A fast-paced game frontend built with Cocos Creator. Handles complex sprite animations, game state management, and physics.",
     tech: ["Cocos Creator", "TypeScript"],
@@ -38,7 +51,7 @@ const projects = [
     year: "2024",
   },
   {
-    id: 4,
+    id: 5,
     title: "Lead Generator AI",
     desc: "AI-powered lead generation SaaS using Google Gemini for intelligent prospect discovery, with role-based access control and auth.",
     tech: ["React.js", "Node.js", "MongoDB", "Gemini"],
@@ -49,11 +62,11 @@ const projects = [
     year: "2025",
   },
   {
-    id: 5,
-    title: "CFI Platform",
+    id: 6,
+    title: "nyxStack Innovation",
     desc: "A collaborative platform with project boards, team management, and real-time task tracking for enterprise workflows.",
     tech: ["React.js", "Express.js", "MongoDB"],
-    link: "#",
+    link: "https://www.nyxstack.com/",
     image: cfi,
     category: "Full-Stack",
     featured: false,
