@@ -1,0 +1,44 @@
+# Vikas Saxena – Portfolio
+
+> Full Stack Developer specialising in React, Next.js, Node.js, and AI-powered web applications. Based in India, available for freelance and full-time opportunities.
+
+## About
+
+Vikas Saxena is a passionate Full Stack Developer with hands-on experience building modern, scalable, and high-performance web applications. He works across the full stack using the MERN stack (MongoDB, Express, React, Node.js), TypeScript, Next.js, and modern UI frameworks. He is actively exploring AI integration, intelligent agents, and automation workflows.
+
+- Email: vikassaxena816@gmail.com
+- LinkedIn: https://www.linkedin.com/in/vikassaxena816
+- GitHub: https://github.com/vikassax1610
+- Twitter / X: https://x.com/vikas_only_
+- Instagram: https://www.instagram.com/vikas.dev_
+
+## Pages
+
+- [Home](https://portfolio2-0-lime.vercel.app/): Hero, About, Featured Projects, Skills, Experience, Contact
+- [Portfolio](https://portfolio2-0-lime.vercel.app/portfolio): Full project gallery with category filters (Web, Full-Stack, Game)
+
+## Experience
+
+- **MERN Stack Developer** – Gamix Labs (Apr 2025 – Present, Full-time, Noida, On-site)
+  Led development of production websites, built scalable React architecture, integrated REST APIs, implemented SEO and Lighthouse optimisations.
+
+- **Frontend Developer** – Tattva Technologies (Jan 2025 – Mar 2025, Full-time, Remote)
+  Built responsive UIs with React.js and Tailwind CSS, developed reusable components, ensured cross-browser compatibility.
+
+- **Software Intern** – Mobzway Technologies (Sep 2024 – Dec 2024, Remote)
+  Built an AI chatbot using Google Gemini Flash API, developed real-time features with Socket.io, worked with MongoDB.
+
+## Skills
+
+- **Frontend**: React.js, Next.js, JavaScript, TypeScript, HTML5, CSS3, Tailwind CSS, Redux Toolkit
+- **Backend**: Node.js, Express.js, MongoDB, PostgreSQL, Socket.io, Firebase
+- **AI & Tools**: Google Gemini API, OpenAI APIs, AI Agents, Prompt Engineering, Framer Motion, Vite, Vercel, Netlify, Git, Figma, Postman
+
+## Selected Projects
+
+- **Gamix Labs** (https://gamixlabs.com) – High-performance gaming studio website with immersive animations. Stack: React, TypeScript, Framer Motion.
+- **Shoply AI Shopping Assistant** (https://ai-shopping-agent-one.vercel.app) – AI-powered eCommerce assistant using natural-language product requests. Stack: React, Node.js, Express, Gemini AI.
+- **NidhiMani Dashboard** (https://tourmaline-meerkat-094164.netlify.app) – CRM & content dashboard with rich-text editing and analytics. Stack: React.js, TailwindCSS, TipTap Editor.
+- **Lead Generator AI** (https://lead-generator-flax.vercel.app) – AI-powered lead generation SaaS with role-based access control. Stack: React.js, Node.js, MongoDB, Gemini.
+- **Fusion Spin** (https://fusionspin.com) – Fast-paced game frontend with sprite animations and physics. Stack: Cocos Creator, TypeScript.
+- **nyxStack Innovation** (https://www.nyxstack.com) – Collaborative platform with project boards and real-time task tracking. Stack: React.js, Express.js, MongoDB.
