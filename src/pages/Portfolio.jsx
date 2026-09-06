@@ -2,6 +2,7 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
 import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 import projects from "../data/projectData.js";
+import { trackEvent } from "../analytics";
 
 const tabs = ["All", "Web", "Full-Stack", "Game"];
 
@@ -31,7 +32,7 @@ const getTechColor = (tech) => {
 };
 
 const ProjectCard = ({ project, index }) => (
-  <motion.div
+  <motion.article
     layout
     initial={{ opacity: 0, y: 40 }}
     animate={{ opacity: 1, y: 0 }}
@@ -53,18 +54,20 @@ const ProjectCard = ({ project, index }) => (
       <img
         loading="lazy"
         src={project.image}
-        alt={project.title}
+        alt={`Screenshot of ${project.title} project`}
         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
       />
-      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-500" />
+      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-500" aria-hidden="true" />
       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <a
           href={project.link}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
+          aria-label={`View ${project.title} live (opens in new tab)`}
+          onClick={() => trackEvent("project_click", { project_name: project.title, location: "card_image" })}
           className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-[var(--accent)] text-black text-xs font-bold uppercase tracking-widest transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
         >
-          View Live <ArrowUpRight className="w-4 h-4" />
+          View Live <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
         </a>
       </div>
     </div>
@@ -77,10 +80,12 @@ const ProjectCard = ({ project, index }) => (
         <a
           href={project.link}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
+          aria-label={`Open ${project.title} in new tab`}
+          onClick={() => trackEvent("project_click", { project_name: project.title, location: "card_icon" })}
           className="p-2 rounded-full bg-white/5 hover:bg-[var(--accent)]/20 text-white/50 hover:text-[var(--accent)] transition-all shrink-0"
         >
-          <ExternalLink className="w-4 h-4" />
+          <ExternalLink className="w-4 h-4" aria-hidden="true" />
         </a>
       </div>
       <p className="text-white/50 text-sm leading-relaxed flex-1">
@@ -105,7 +110,7 @@ const ProjectCard = ({ project, index }) => (
         })}
       </div>
     </div>
-  </motion.div>
+  </motion.article>
 );
 
 const Portfolio = () => {
@@ -117,13 +122,19 @@ const Portfolio = () => {
       ? projects
       : projects.filter((p) => p.category === activeTab);
 
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    trackEvent("portfolio_filter", { filter: tab });
+  };
+
   return (
     <section
       ref={ref}
+      aria-labelledby="portfolio-heading"
       className="relative min-h-screen bg-[#050505] text-white py-24 md:py-32 overflow-hidden selection:bg-amber-500/30"
     >
-      <div className="absolute top-1/4 right-0 w-[700px] h-[700px] bg-[var(--accent)]/4 rounded-full blur-[150px] pointer-events-none translate-x-1/2" />
-      <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-[#61DAFB]/3 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/4 right-0 w-[700px] h-[700px] bg-[var(--accent)]/4 rounded-full blur-[150px] pointer-events-none translate-x-1/2" aria-hidden="true" />
+      <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-[#61DAFB]/3 rounded-full blur-[120px] pointer-events-none" aria-hidden="true" />
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
         <motion.div
@@ -133,24 +144,30 @@ const Portfolio = () => {
           className="mb-16"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-6">
-            <span className="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse" aria-hidden="true" />
             <span className="text-xs font-semibold tracking-wider text-white/80 uppercase">
               Selected Works
             </span>
           </div>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-[1.1]">
+            <h1 id="portfolio-heading" className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-[1.1]">
               Featured{" "}
               <span className="text-[var(--accent)] relative inline-block">
                 Projects
-                <div className="absolute bottom-2 left-0 w-full h-3 bg-[var(--accent)]/15 -z-10 skew-x-12" />
+                <div className="absolute bottom-2 left-0 w-full h-3 bg-[var(--accent)]/15 -z-10 skew-x-12" aria-hidden="true" />
               </span>
-            </h2>
-            <div className="flex items-center gap-2 flex-wrap">
+            </h1>
+            <div
+              className="flex items-center gap-2 flex-wrap"
+              role="group"
+              aria-label="Filter projects by category"
+            >
               {tabs.map((tab) => (
                 <button
                   key={tab}
-                  onClick={() => setActiveTab(tab)}
+                  onClick={() => handleTabChange(tab)}
+                  aria-pressed={activeTab === tab}
+                  aria-label={`Filter by ${tab}`}
                   className={`px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 ${activeTab === tab ? "bg-[var(--accent)] text-black" : "border border-white/15 text-white/50 hover:text-white hover:border-white/30"}`}
                 >
                   {tab}
@@ -178,14 +195,16 @@ const Portfolio = () => {
           className="flex justify-center mt-16"
         >
           <a
-            href="https://github.com"
+            href="https://github.com/vikassax1610"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
+            aria-label="View all projects on Vikas Saxena's GitHub (opens in new tab)"
+            onClick={() => trackEvent("outbound_link", { destination: "github", label: "view_all_github" })}
             className="group flex items-center gap-3 px-8 py-4 rounded-full border border-white/15 hover:border-[var(--accent)]/50 text-white/60 hover:text-[var(--accent)] font-bold uppercase tracking-widest text-xs transition-all duration-300"
           >
-            <Github className="w-4 h-4" />
+            <Github className="w-4 h-4" aria-hidden="true" />
             View All on GitHub
-            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" aria-hidden="true" />
           </a>
         </motion.div>
       </div>

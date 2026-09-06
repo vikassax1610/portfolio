@@ -2,10 +2,23 @@ import { motion } from "framer-motion";
 import myImg from "/myImg.png";
 import { ArrowRight } from "lucide-react";
 import SkillCarousel from "./SkillCarousel";
+import { trackEvent } from "../analytics";
 
 const HeroSection = () => {
+  const handleCtaClick = () => {
+    trackEvent("cta_click", { label: "start_a_project", location: "hero" });
+  };
+
   return (
-    <section className="relative min-h-screen bg-[#050505] text-white overflow-hidden font-sans selection:bg-amber-500/30">
+    <section
+      className="relative min-h-screen bg-[#050505] text-white overflow-hidden font-sans selection:bg-amber-500/30"
+      aria-labelledby="hero-heading"
+    >
+      {/* Visually-hidden h1 — satisfies SEO & accessibility without changing the visual design */}
+      <h1 id="hero-heading" className="sr-only">
+        Vikas Saxena – Full Stack Developer & UI/UX Designer. Beyond Visuals, Built with Vision.
+      </h1>
+
       <div className="relative z-10 flex items-center justify-center min-h-screen max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 pt-20 lg:pt-0 py-8 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 w-full items-center gap-y-10 lg:mt-12">
           {/* LEFT CONTENT */}
@@ -16,6 +29,7 @@ const HeroSection = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 className="hero-title font-bold leading-[0.75] tracking-tight"
+                aria-hidden="true"
               >
                 <span className="block text-[var(--accent)] text-[8rem] sm:text-[8rem] md:text-[8rem] lg:text-[8rem] xl:text-[8rem]">
                   BEYOND
@@ -54,6 +68,7 @@ const HeroSection = () => {
                   backgroundPosition: "center",
                   filter: "grayscale(100%)",
                 }}
+                role="presentation"
               />
 
               <div className="absolute inset-0 bg-black/60 pointer-events-none" />
@@ -69,12 +84,15 @@ const HeroSection = () => {
               className="relative z-20 flex justify-center items-end h-full"
             >
               {/* Glow */}
-              <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[250px] h-[250px] lg:w-[420px] lg:h-[500px] rounded-full bg-white/5 blur-[100px]" />
+              <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[250px] h-[250px] lg:w-[420px] lg:h-[500px] rounded-full bg-white/5 blur-[100px]" aria-hidden="true" />
 
               <img
                 src={myImg}
-                alt="Developer"
+                alt="Vikas Saxena, Full Stack Developer"
                 loading="eager"
+                fetchpriority="high"
+                width="550"
+                height="550"
                 className="lg:h-[550px] md:h-[600px] h-[400px] object-contain relative z-10"
                 style={{
                   filter:
@@ -97,9 +115,9 @@ const HeroSection = () => {
             >
               <div className="mb-6 py-2 lg:mb-5 w-full lg:max-w-sm space-y-2">
                 <div>
-                  <h3 className="text-2xl hero-title md:text-5xl lg:text-3xl font-bold leading-relaxed tracking-tight text-white">
-                    I build brands, websites & digital experiences
-                  </h3>
+                  <h2 className="text-2xl hero-title md:text-5xl lg:text-3xl font-bold leading-relaxed tracking-tight text-white">
+                    I build brands, websites &amp; digital experiences
+                  </h2>
 
                   <p className="text-white/40 text-sans text-base md:text-xl lg:text-lg mt-3 leading-relaxed">
                     with intention, clarity and care.
@@ -114,27 +132,27 @@ const HeroSection = () => {
 
                   <div className="flex justify-center lg:justify-end gap-16 lg:gap-6 pt-2">
                     <div>
-                      <h4 className="text-[var(--accent)] text-2xl font-bold">
+                      <p className="text-[var(--accent)] text-2xl font-bold">
                         10+
-                      </h4>
+                      </p>
                       <span className="text-white/40 text-xs uppercase tracking-wider">
                         Projects
                       </span>
                     </div>
 
                     <div>
-                      <h4 className="text-[var(--accent)] text-2xl font-bold">
+                      <p className="text-[var(--accent)] text-2xl font-bold">
                         100%
-                      </h4>
+                      </p>
                       <span className="text-white/40 text-xs uppercase tracking-wider">
                         Custom
                       </span>
                     </div>
 
                     <div>
-                      <h4 className="text-[var(--accent)] text-2xl font-bold">
+                      <p className="text-[var(--accent)] text-2xl font-bold">
                         AI
-                      </h4>
+                      </p>
                       <span className="text-white/40 text-xs uppercase tracking-wider">
                         Powered
                       </span>
@@ -145,6 +163,8 @@ const HeroSection = () => {
 
               <a
                 href="#contact"
+                onClick={handleCtaClick}
+                aria-label="Start a project with Vikas Saxena – jump to contact section"
                 className="
   inline-flex
   items-center
@@ -180,7 +200,7 @@ const HeroSection = () => {
     "
                 >
                   Start a Project
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </span>
               </a>
             </motion.div>

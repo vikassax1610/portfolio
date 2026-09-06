@@ -12,26 +12,33 @@ import {
   Github,
 } from "lucide-react";
 import contactImg from "../assets/contactus.webp";
+import { trackEvent } from "../analytics";
 
 const Contact = () => {
   const [state, handleSubmit] = useForm("xrbkyzer");
   const socials = [
-    { icon: Instagram, href: "https://www.instagram.com/vikas.dev_" },
-    { icon: Linkedin, href: "https://www.linkedin.com/in/vikassaxena816" },
-    { icon: Mail, href: "mailto:vikassaxena816@gmail.com" },
-    { icon: Twitter, href: "https://x.com/vikas_only_" },
-    { icon: Github, href: "https://github.com/vikassax1610" },
+    { icon: Instagram, href: "https://www.instagram.com/vikas.dev_", label: "Instagram profile" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/vikassaxena816", label: "LinkedIn profile" },
+    { icon: Mail, href: "mailto:vikassaxena816@gmail.com", label: "Send email" },
+    { icon: Twitter, href: "https://x.com/vikas_only_", label: "Twitter / X profile" },
+    { icon: Github, href: "https://github.com/vikassax1610", label: "GitHub profile" },
   ];
+
+  const onSubmit = (e) => {
+    trackEvent("form_submit", { form_name: "contact" });
+    handleSubmit(e);
+  };
 
   return (
     <section
       id="contact"
+      aria-labelledby="contact-heading"
       className="relative bg-[#0a0a0a] text-white overflow-hidden selection:bg-orange-500/30 min-h-screen flex"
     >
       {/* ───── LEFT PANEL: Form (always visible) ───── */}
       <div className="relative flex flex-col justify-center w-full lg:w-[45%] px-6 sm:px-10 md:px-14 py-16 bg-[#0a0a0a] z-10 shrink-0">
         {/* Top orange border */}
-        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-orange-600 via-orange-500 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-orange-600 via-orange-500 to-transparent" aria-hidden="true" />
 
         {/* Label */}
         <motion.p
@@ -46,6 +53,7 @@ const Contact = () => {
 
         {/* Heading */}
         <motion.h2
+          id="contact-heading"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -69,57 +77,71 @@ const Contact = () => {
 
         {/* Form */}
         <motion.form
-          onSubmit={handleSubmit}
+          onSubmit={onSubmit}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="flex flex-col gap-3 w-full max-w-full"
+          aria-label="Contact form"
+          noValidate
         >
           {/* Name */}
-          <label className="flex items-center gap-3 bg-[#141414] border border-white/8 rounded px-4 py-3.5 focus-within:border-orange-500/50 transition-colors cursor-text">
-            <User className="w-4 h-4 text-orange-500 shrink-0" />
+          <label
+            className="flex items-center gap-3 bg-[#141414] border border-white/8 rounded px-4 py-3.5 focus-within:border-orange-500/50 transition-colors cursor-text"
+          >
+            <User className="w-4 h-4 text-orange-500 shrink-0" aria-hidden="true" />
             <input
               type="text"
               name="name"
               placeholder="Your Name"
+              aria-label="Your name"
               required
-              className="flex-1 bg-transparent text-sm text-white placeholder-white/30 outline-none min-w-0"
+              className="flex-1 bg-transparent text-sm text-white placeholder-white/30 outline-none min-w-0 focus-visible:outline-none"
             />
           </label>
 
           {/* Email */}
-          <label className="flex items-center gap-3 bg-[#141414] border border-white/8 rounded px-4 py-3.5 focus-within:border-orange-500/50 transition-colors cursor-text">
-            <Mail className="w-4 h-4 text-orange-500 shrink-0" />
+          <label
+            className="flex items-center gap-3 bg-[#141414] border border-white/8 rounded px-4 py-3.5 focus-within:border-orange-500/50 transition-colors cursor-text"
+          >
+            <Mail className="w-4 h-4 text-orange-500 shrink-0" aria-hidden="true" />
             <input
               type="email"
               name="email"
               placeholder="Your Email"
+              aria-label="Your email address"
               required
-              className="flex-1 bg-transparent text-sm text-white placeholder-white/30 outline-none min-w-0"
+              className="flex-1 bg-transparent text-sm text-white placeholder-white/30 outline-none min-w-0 focus-visible:outline-none"
             />
           </label>
 
           {/* Phone */}
-          <label className="flex items-center gap-3 bg-[#141414] border border-white/8 rounded px-4 py-3.5 focus-within:border-orange-500/50 transition-colors cursor-text">
-            <Phone className="w-4 h-4 text-orange-500 shrink-0" />
+          <label
+            className="flex items-center gap-3 bg-[#141414] border border-white/8 rounded px-4 py-3.5 focus-within:border-orange-500/50 transition-colors cursor-text"
+          >
+            <Phone className="w-4 h-4 text-orange-500 shrink-0" aria-hidden="true" />
             <input
               type="tel"
               name="phone"
               placeholder="Your Phone"
-              className="flex-1 bg-transparent text-sm text-white placeholder-white/30 outline-none min-w-0"
+              aria-label="Your phone number (optional)"
+              className="flex-1 bg-transparent text-sm text-white placeholder-white/30 outline-none min-w-0 focus-visible:outline-none"
             />
           </label>
 
           {/* Message */}
-          <label className="flex items-start gap-3 bg-[#141414] border border-white/8 rounded px-4 py-3.5 focus-within:border-orange-500/50 transition-colors cursor-text">
-            <PenLine className="w-4 h-4 text-orange-500 shrink-0 mt-0.5" />
+          <label
+            className="flex items-start gap-3 bg-[#141414] border border-white/8 rounded px-4 py-3.5 focus-within:border-orange-500/50 transition-colors cursor-text"
+          >
+            <PenLine className="w-4 h-4 text-orange-500 shrink-0 mt-0.5" aria-hidden="true" />
             <textarea
               name="message"
               rows={5}
               placeholder="Your Message"
+              aria-label="Your message"
               required
-              className="flex-1 bg-transparent text-sm text-white placeholder-white/30 outline-none resize-none min-w-0"
+              className="flex-1 bg-transparent text-sm text-white placeholder-white/30 outline-none resize-none min-w-0 focus-visible:outline-none"
             />
           </label>
 
@@ -136,7 +158,7 @@ const Contact = () => {
             ) : (
               <>
                 <span>SEND MESSAGE</span>
-                <Send className="w-4 h-4" />
+                <Send className="w-4 h-4" aria-hidden="true" />
               </>
             )}
           </button>
@@ -158,18 +180,20 @@ const Contact = () => {
             <div className="flex-1 h-px bg-white/10" />
           </div>
 
-          <div className="flex items-center justify-center gap-3">
-            {socials.map(({ icon: Icon, href }, i) => (
+          <div className="flex items-center justify-center gap-3" role="list" aria-label="Social media links">
+            {socials.map(({ icon: Icon, href, label }) => (
               <motion.a
-                key={i}
+                key={label}
                 href={href}
-                target="_blank"
-                rel="noreferrer"
+                target={href.startsWith("mailto") ? undefined : "_blank"}
+                rel={href.startsWith("mailto") ? undefined : "noopener noreferrer"}
+                aria-label={label}
+                role="listitem"
                 whileHover={{ scale: 1.15, y: -3 }}
                 transition={{ type: "spring", stiffness: 300 }}
                 className="w-11 h-11 rounded-full border-2 border-orange-500/50 flex items-center justify-center text-orange-500 hover:bg-orange-500 hover:text-black hover:border-orange-500 transition-colors duration-200"
               >
-                <Icon className="w-4 h-4" />
+                <Icon className="w-4 h-4" aria-hidden="true" />
               </motion.a>
             ))}
           </div>
@@ -177,7 +201,7 @@ const Contact = () => {
 
         {/* Footer */}
         <p className="mt-10 text-white/20 text-[12px]">
-          © 2025 Vikas Saxena · Built with React & Framer Motion
+          © 2025 Vikas Saxena · Built with React &amp; Framer Motion
         </p>
       </div>
 
@@ -187,18 +211,19 @@ const Contact = () => {
         <img
           src={contactImg}
           loading="lazy"
-          alt="Contact Visual"
+          alt=""
+          role="presentation"
           className="absolute inset-0 w-full h-full object-contain "
         />
 
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
 
         {/* Blend edge with left panel */}
-        <div className="absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10" />
+        <div className="absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10" aria-hidden="true" />
 
         {/* Bottom orange line */}
-        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-orange-600 via-orange-500 to-transparent z-20" />
+        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-orange-600 via-orange-500 to-transparent z-20" aria-hidden="true" />
       </div>
     </section>
   );

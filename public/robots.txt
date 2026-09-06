@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Disallow non-indexable or private paths (none exist in this SPA currently)
+# Disallow: /api/
+# Disallow: /admin/
+
+Sitemap: https://portfolio2-0-lime.vercel.app/sitemap.xml

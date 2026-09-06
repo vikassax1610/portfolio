@@ -17,36 +17,43 @@ const SkillCarousel = () => {
   const icons = [
     {
       icon: html,
+      alt: "HTML5",
       color: "hover:border-red-500",
       shadow: "hover:shadow-red-500/50",
     },
     {
       icon: css,
+      alt: "CSS3",
       color: "hover:border-blue-500",
       shadow: "hover:shadow-blue-500/50",
     },
     {
       icon: js,
+      alt: "JavaScript",
       color: "hover:border-yellow-500",
       shadow: "hover:shadow-yellow-500/50",
     },
     {
       icon: react,
+      alt: "React",
       color: "hover:border-blue-500",
       shadow: "hover:shadow-blue-500/50",
     },
     {
       icon: node,
+      alt: "Node.js",
       color: "hover:border-green-500",
       shadow: "hover:shadow-green-500/50",
     },
     {
       icon: express,
+      alt: "Express.js",
       color: "hover:border-yellow-500",
       shadow: "hover:shadow-yellow-500/50",
     },
     {
       icon: mongo,
+      alt: "MongoDB",
       color: "hover:border-green-500",
       shadow: "hover:shadow-green-500/50",
     },
@@ -54,36 +61,43 @@ const SkillCarousel = () => {
   const icons2 = [
     {
       icon: html,
+      alt: "HTML5",
       color: "hover:border-red-500",
       shadow: "hover:shadow-red-500/50",
     },
     {
       icon: css,
+      alt: "CSS3",
       color: "hover:border-blue-500",
       shadow: "hover:shadow-blue-500/50",
     },
     {
       icon: js,
+      alt: "JavaScript",
       color: "hover:border-yellow-500",
       shadow: "hover:shadow-yellow-500/50",
     },
     {
       icon: react,
+      alt: "React",
       color: "hover:border-blue-500",
       shadow: "hover:shadow-blue-500/50",
     },
     {
       icon: node,
+      alt: "Node.js",
       color: "hover:border-green-500",
       shadow: "hover:shadow-green-500/50",
     },
     {
       icon: express,
+      alt: "Express.js",
       color: "hover:border-yellow-500",
       shadow: "hover:shadow-yellow-500/50",
     },
     {
       icon: mongo,
+      alt: "MongoDB",
       color: "hover:border-green-500",
       shadow: "hover:shadow-green-500/50",
     },
@@ -119,15 +133,21 @@ const SkillCarousel = () => {
   });
 
   return (
-    <div className="relative py-8  overflow-hidden w-full lg:w-1/2">
+    <div
+      className="relative py-8 overflow-hidden w-full lg:w-1/2"
+      role="region"
+      aria-label="Technology skills carousel"
+      aria-roledescription="carousel"
+    >
       {/* Fade Edges */}
-      <div className="absolute left-0 w-24 top-0 h-full bg-transparent z-10" />
-      <div className="absolute right-0 w-24 top-0 h-full bg-transparent z-10" />
+      <div className="absolute left-0 w-24 top-0 h-full bg-transparent z-10" aria-hidden="true" />
+      <div className="absolute right-0 w-24 top-0 h-full bg-transparent z-10" aria-hidden="true" />
 
       {/* Carousel Track */}
       <motion.div
         ref={containerRef}
         className="flex gap-6 w-max"
+        aria-hidden="true"
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >
@@ -141,8 +161,8 @@ const SkillCarousel = () => {
             <img
               loading="lazy"
               src={item.icon}
-              alt=""
-              className="w-20 lg:w-10 lg:h-10 text-white "
+              alt={item.alt}
+              className="w-20 lg:w-10 lg:h-10"
             />
           </motion.div>
         ))}
