@@ -33,7 +33,7 @@ export default function Navbar({ setOpenSideBar }) {
           </div>
 
           <a
-            href="https://drive.google.com/file/d/1MDj24uZxApRR3WulioKXRsXXYvhvuKIK/view?usp=drivesdk"
+            href="https://drive.google.com/file/d/157aGBU1UMs_5wPFrHJt34igAHY5x6q48/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Download Vikas Saxena's resume (opens in new tab)"
